@@ -13,7 +13,14 @@ def wood_oven(argument_1):
     else:
         return 'not Naan'
 
-
+def run_naan_factory(ingredient1, ingredient2):
+    # is_dough = make_dough(ingredient1, ingredient2)
+    # is_bread = wood_oven(is_dough)
+    # return is_bread
+    return wood_oven(make_dough(ingredient1, ingredient2))
+print('/////////////')
+print(run_naan_factory('wheat', 'water'))
+print('/////////////')
 # Calling of functions
 
 # Tests TDD
@@ -34,3 +41,12 @@ print(wood_oven('dough') == 'Naan')
 print('Testing wood_oven, with "tortillas" --> "not Naan" to be outputted')
 print(wood_oven('tortillas') == 'not Naan')
 
+# As a user, I should be able to pass wheat and water through make_dough and then wood_oven, to make naan bread!
+# I.e. run the whole factory process
+print('Testing run_naan_factory with "wheat" and "water" --> "Naan" to be outputted')
+print(run_naan_factory('wheat', 'water')== 'Naan')
+
+# As a user, I should be able to pass anything but wheat and water through make_dough and then wood_oven, to make naan bread!
+# I.e. test the whole factory process
+print('Testing run_naan_factory with "skunks" and "racoons" --> "not Naan" to be outputted')
+print(run_naan_factory('skunks', 'racoons')== 'not Naan')
